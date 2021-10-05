@@ -1,0 +1,35 @@
+version: '3'
+services:
+    pg:
+      container_name: postgres_db
+      image: postgres:12
+      environment:
+        POSTGRES_PASSWORD: root
+        PG_DATA: /var/lib/postgresql/data
+      ports:
+        - 5433:5432
+      volumes:
+        - db_data:/var/lib/postgresql/data
+      networks:
+        - gnet
+    pg-admin:
+      container_name: db_admin
+      image: dpage/pgadmin4
+      environment:
+        PGADMIN_DEFAULT_PASSWORD: root
+        PGADMIN_DEFAULT_EMAIL: root@root.com
+      ports:
+        - 8081:80
+      volumes:
+        - admin_data:/var/lib/pgadmin
+      networks:
+        - gnet
+      depends_on:
+        - postgres
+      depends_on:
+        - pg
+networks:
+  gnet:
+volumes:
+  db_data:
+  admin_data:
