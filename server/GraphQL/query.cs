@@ -16,5 +16,12 @@ namespace server.GraqlQL
             // The DB context can be injected through the method call thanks to the Chocolate Framework, very similar to Apollo Server.
             return context.Platforms;
         }
+
+        [UseDbContext(typeof(AppDbContext))]
+        [UseProjection]
+        public IQueryable<Command> GetCommand([ScopedService] AppDbContext context)
+        {
+            return context.Commands;
+        }
     }
 }
