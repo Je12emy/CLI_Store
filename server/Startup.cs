@@ -22,7 +22,8 @@ namespace server
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options =>
+            // Share DB Context between resolvers
+            services.AddPooledDbContextFactory<AppDbContext>(options =>
                                    options.UseNpgsql(Configuration.GetConnectionString("CommanderServerConnection")));
 
             services
