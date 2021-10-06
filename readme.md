@@ -4,14 +4,14 @@ This is a GraphQL server built with [dotNet 5](https://dotnet.microsoft.com/down
 
 ## Usage
 
-You may start a Postgress instance and PGAdmin with the included `dockercompose` file.
+You may start a Postgress database,a PGAdmin and the server itself with the included `dockercompose` file.
 
 ```console
 docker-compose up
 ```
-_Note:_ This will use port 8080 and 8081 for each container.
+_Note:_ This will use port 8080, 8081 and 5000 for each container.
 
-cd into the server directory and run the app.
+You may also cd into the server directory and modify the connection string located at `launchSettings`
 
 ```console
 dotnet run
@@ -29,6 +29,6 @@ Explore the schema with [GraphQL Voyager](https://github.com/APIs-guru/graphql-v
 
 ## Todo
 
-- [ ] Dockerize server app.
-- [ ] Add server image to docker-compose.
+- [x] Dockerize server app.
+- [x] Add server image to docker-compose.
 - [ ] Nextjs frontned.
