@@ -1,5 +1,12 @@
 version: '3'
 services:
+    server:
+      container_name: command_cli_server
+      build: server
+      ports:
+        - 5000:5000
+      networks:
+        - gnet
     pg:
       container_name: postgres_db
       image: postgres:12
