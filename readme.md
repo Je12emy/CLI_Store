@@ -1,6 +1,6 @@
 # CLI Store
 
-This is a GraphQL server built with [dotNet 5](https://dotnet.microsoft.com/download) using the [Hot Chocolate framework](https://chillicream.com/docs/hotchocolate)
+This is a GraphQL server built with [dotNet 5](https://dotnet.microsoft.com/download) using the [Hot Chocolate framework](https://chillicream.com/docs/hotchocolate), please visit the [original tutorial](https://youtu.be/HuN94qNwQmM)
 
 ## Usage
 
