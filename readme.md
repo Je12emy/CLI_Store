@@ -31,4 +31,4 @@ Explore the schema with [GraphQL Voyager](https://github.com/APIs-guru/graphql-v
 
 - [ ] Dockerize server app.
 - [ ] Add server image to docker-compose.
-- [ ] Nextjs frontned.
+- [ ] Vuejs frontend, maybe Vite.
