@@ -32,7 +32,7 @@ namespace server.GraphQL.Platforms
 
             descriptor
                 .Field("commands")
-                .ResolveWith<PlatformResolver>(p => p.GetCommands(default, default))
+                .ResolveWith<PlatformResolver>(p => p.GetCommands(default!, default!))
                 .UseDbContext<AppDbContext>()
                 .Description("This is the list of available commands for this platform.");
         }

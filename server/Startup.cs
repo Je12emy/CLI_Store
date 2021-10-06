@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using server.GraphQL.Platforms;
 using server.GraphQL;
 using GraphQL.Server.Ui.Voyager;
+using server.GraphQL.Commands;
 
 namespace server
 {
@@ -29,9 +30,10 @@ namespace server
 
             services
                 .AddGraphQLServer()
+                .AddProjections()
                 .AddQueryType<Query>()
                 .AddType<PlatformType>()
-                .AddProjections();
+                .AddType<CommandType>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
