@@ -5,8 +5,9 @@ using Microsoft.EntityFrameworkCore;
 using server.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using server.GraphQL.Platforms;
+using server.GraphQL;
 using GraphQL.Server.Ui.Voyager;
-using server.GraqlQL;
 
 namespace server
 {
@@ -29,6 +30,7 @@ namespace server
             services
                 .AddGraphQLServer()
                 .AddQueryType<Query>()
+                .AddType<PlatformType>()
                 .AddProjections();
         }
 
@@ -47,10 +49,11 @@ namespace server
                 endpoints.MapGraphQL();
             });
 
-            app.UseGraphQLVoyager(new GraphQL.Server.Ui.Voyager.VoyagerOptions()
+            app.UseGraphQLVoyager(new VoyagerOptions()
             {
                 GraphQLEndPoint = "/graphql"
-            });
+            }, "/graphql-voyager");
+
         }
     }
 }

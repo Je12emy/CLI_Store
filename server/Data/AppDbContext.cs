@@ -16,7 +16,7 @@ namespace server.Data
             modelBuilder
                 .Entity<Platform>()
                 .HasMany(p => p.Commands)           // A platform has many commands
-                .WithOne(p => p.Platform)           // A command has one platform
+                .WithOne(p => p.Platform!)          // A command has one platform
                 .HasForeignKey(p => p.PlatformId);  // on FK platformId
 
             modelBuilder

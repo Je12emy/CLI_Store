@@ -4,7 +4,7 @@ using HotChocolate.Data;
 using server.Data;
 using server.Models;
 
-namespace server.GraqlQL
+namespace server.GraphQL
 {
     public class Query
     {
