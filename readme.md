@@ -1,6 +1,6 @@
 # CLI Store
 
-This is a GraphQL server built with [dotNet 5](https://dotnet.microsoft.com/download) using the [Hot Chocolate framework](https://chillicream.com/docs/hotchocolate)
+This is a GraphQL server built with [dotNet 5](https://dotnet.microsoft.com/download) using the [Hot Chocolate framework](https://chillicream.com/docs/hotchocolate), please visit the [original tutorial](https://youtu.be/HuN94qNwQmM)
 
 ## Usage
 
@@ -31,4 +31,4 @@ Explore the schema with [GraphQL Voyager](https://github.com/APIs-guru/graphql-v
 
 - [x] Dockerize server app.
 - [x] Add server image to docker-compose.
-- [ ] Nextjs frontned.
+- [ ] Vuejs frontend, maybe Vite.
