@@ -8,7 +8,7 @@ namespace server.Data
         public AppDbContext(DbContextOptions<AppDbContext> opt) : base(opt) { }
 
         public DbSet<Platform> Platforms { get; set; }
-        
+
         public DbSet<Command> Commands { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,6 +24,8 @@ namespace server.Data
                 .HasOne(c => c.Platform)            // A command has one platform
                 .WithMany(c => c.Commands)          // A platform has many commands
                 .HasForeignKey(c => c.PlatformId);  // on FK platformId
+
+            ModelBuilderExtensions.Seed(modelBuilder);
         }
     }
 }

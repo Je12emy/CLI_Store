@@ -9,8 +9,8 @@ using server.Data;
 namespace server.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211005211419_AddCommandToDB")]
-    partial class AddCommandToDB
+    [Migration("20211007193431_CreateBaseEntities")]
+    partial class CreateBaseEntities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -43,6 +43,43 @@ namespace server.Migrations
                     b.HasIndex("PlatformId");
 
                     b.ToTable("Commands");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            HowTo = "build a project",
+                            Line = "dotnet build",
+                            PlatformId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            HowTo = "run a project",
+                            Line = "dotnet run",
+                            PlatformId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            HowTo = "add a nuget package",
+                            Line = "dotnet add package <package name>",
+                            PlatformId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            HowTo = "view running containers",
+                            Line = "docker container ls",
+                            PlatformId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            HowTo = "view available images",
+                            Line = "docker image ls",
+                            PlatformId = 2
+                        });
                 });
 
             modelBuilder.Entity("server.Models.Platform", b =>
@@ -62,6 +99,20 @@ namespace server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Platforms");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            LicenseKey = "",
+                            Name = ".Net"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            LicenseKey = "",
+                            Name = "Docker"
+                        });
                 });
 
             modelBuilder.Entity("server.Models.Command", b =>
