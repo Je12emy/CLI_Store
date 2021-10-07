@@ -16,6 +16,11 @@ You may also cd into the server directory and modify the connection string locat
 ```console
 dotnet run
 ```
+Run the migrations if needed, you may need to create the database itself (The database name in the connection string is expected to be `commander`).
+
+```console
+dotnet ef database update
+```
 
 Visit the "Banana Cake Pop" GraphQL playground at http://localhost:5000/graphql
 
